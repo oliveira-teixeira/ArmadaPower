@@ -68,4 +68,4 @@ export const router = createBrowserRouter([
       { path: 'energy',                           Component: EnergyUsagePage },
     ],
   },
-]);
+], { basename: '/ArmadaPower' });

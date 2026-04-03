@@ -1,5 +1,6 @@
 import svgPaths from "./svg-wui1ntuu1a";
-import imgBackground from "figma:asset/0ac8edeb4371c886018be3c6200c91c9ff986b43.png";
+// Figma asset placeholder - original: figma:asset/0ac8edeb4371c886018be3c6200c91c9ff986b43.png
+const imgBackground = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect fill="%231a1a2e" width="400" height="300"/></svg>';
 
 function Group() {
   return (

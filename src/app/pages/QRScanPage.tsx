@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { X } from 'lucide-react';
-import imgQrScene from 'figma:asset/326694bda69a77c8dc191179450e5b7ab0fa1545.png';
+// Figma asset placeholder - original: figma:asset/326694bda69a77c8dc191179450e5b7ab0fa1545.png
+const imgQrScene = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect fill="%23111" width="400" height="400"/></svg>';
 
 /** Corner bracket for the QR frame */
 function ScanCorner({ pos }: { pos: 'tl' | 'tr' | 'bl' | 'br' }) {
