@@ -1,0 +1,279 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  /* Typography scale variables */
+  --text-h1: 56px;
+  --text-h2: 48px;
+  --text-h3: 40px;
+  --text-h4: 24px;
+  --text-base: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+  /* Font family variables */
+  --font-display: 'Bomstad Display', serif;
+  --font-body: 'Roboto', sans-serif;
+  --font-ui: 'Inter', sans-serif;
+  /* Font weight variables */
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  /* === CORE PALETTE === */
+
+  /* App background (deepest dark) */
+  --background: rgba(10, 17, 29, 1.00);
+  /* Default text/foreground on dark bg */
+  --foreground: rgba(247, 249, 252, 1.00);
+
+  /* Dark panel / header / device page background */
+  --panel: rgba(25, 41, 71, 1.00);
+  /* Mid-tone panel — used for active tabs, hint banners, chart controls */
+  --panel-highlight: rgba(40, 66, 113, 1.00);
+  /* Deep dark panel (temperature hero card) */
+  --panel-deep: rgba(15, 30, 53, 1.00);
+
+  /* Light card surface */
+  --surface: rgba(247, 249, 252, 1.00);
+  /* Text on light card surfaces */
+  --surface-foreground: rgba(11, 37, 69, 1.00);
+
+  /* Card (dark) */
+  --card: rgba(25, 41, 71, 1.00);
+  --card-foreground: rgba(247, 249, 252, 1.00);
+
+  /* Popover */
+  --popover: rgba(10, 17, 29, 1.00);
+  --popover-foreground: rgba(247, 249, 252, 1.00);
+
+  /* Primary interactive blue */
+  --primary: rgba(75, 117, 192, 1.00);
+  --primary-foreground: rgba(247, 249, 252, 1.00);
+
+  /* Secondary (purple) */
+  --secondary: rgba(142, 106, 227, 1.00);
+  --secondary-foreground: rgba(13, 13, 13, 1.00);
+
+  /* Muted (subtle overlay) */
+  --muted: rgba(0, 0, 0, 0.10);
+  --muted-foreground: rgba(75, 117, 192, 1.00);
+
+  /* Accent light blue (borders, secondary surfaces) */
+  --accent: rgba(202, 214, 236, 1.00);
+  --accent-foreground: rgba(25, 41, 71, 1.00);
+
+  /* Destructive (error red) */
+  --destructive: rgba(220, 38, 38, 1.00);
+  --destructive-foreground: rgba(255, 255, 255, 1.00);
+
+  /* Borders */
+  --border: rgba(202, 214, 236, 1.00);
+  --input: rgba(0, 0, 0, 0.00);
+  --input-background: rgba(0, 0, 0, 0.00);
+  --ring: rgba(75, 117, 192, 1.00);
+
+  /* === STATUS COLORS === */
+
+  /* Success / Online / Connected */
+  --success: rgba(47, 201, 85, 1.00);
+  --success-dark: rgba(6, 90, 37, 1.00);
+
+  /* Warning / Alert */
+  --warning: rgba(210, 159, 0, 1.00);
+  --warning-light: rgba(255, 224, 126, 1.00);
+  --warning-dark: rgba(96, 72, 0, 1.00);
+
+  /* Offline / Danger */
+  --danger: rgba(203, 7, 7, 1.00);
+
+  /* === ELEVATION SHADOWS === */
+  --elevation-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  --elevation-md: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+
+  /* === CHARTS === */
+  --chart-1: rgba(58, 106, 191, 1.00);
+  --chart-2: rgba(75, 117, 192, 1.00);
+  --chart-3: rgba(142, 106, 227, 1.00);
+  --chart-4: rgba(202, 214, 236, 1.00);
+  --chart-5: rgba(119, 149, 207, 1.00);
+
+  /* === BORDER RADIUS === */
+  --radius: 8px;
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --radius-pill: 9999px;
+
+  /* === SIDEBAR === */
+  --sidebar: rgba(10, 17, 29, 1.00);
+  --sidebar-foreground: rgba(247, 249, 252, 1.00);
+  --sidebar-primary: rgba(75, 117, 192, 1.00);
+  --sidebar-primary-foreground: rgba(247, 249, 252, 1.00);
+  --sidebar-accent: rgba(202, 214, 236, 1.00);
+  --sidebar-accent-foreground: rgba(25, 41, 71, 1.00);
+  --sidebar-border: rgba(202, 214, 236, 1.00);
+  --sidebar-ring: rgba(75, 117, 192, 1.00);
+}
+
+@theme inline {
+  /* Core */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Panel / surfaces */
+  --color-panel: var(--panel);
+  --color-panel-highlight: var(--panel-highlight);
+  --color-panel-deep: var(--panel-deep);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+
+  /* Card */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  /* Popover */
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  /* Interactive */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  /* Muted */
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  /* Accent */
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Destructive */
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  /* Form */
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-ring: var(--ring);
+
+  /* Status */
+  --color-success: var(--success);
+  --color-success-dark: var(--success-dark);
+  --color-warning: var(--warning);
+  --color-warning-light: var(--warning-light);
+  --color-warning-dark: var(--warning-dark);
+  --color-danger: var(--danger);
+
+  /* Charts */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: var(--radius-card);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Shadows */
+  --shadow-sm: var(--elevation-sm);
+  --shadow-md: var(--elevation-md);
+
+  /* Font families as Tailwind utilities */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-ui: var(--font-ui);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-h1);
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-h3);
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.2;
+    }
+
+    h4 {
+      font-family: var(--font-display);
+      font-size: var(--text-h4);
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.4;
+    }
+
+    p {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-family: var(--font-ui);
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+    }
+
+    button {
+      font-family: var(--font-body);
+      font-size: var(--font-size);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-family: var(--font-body);
+      font-size: var(--font-size);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
