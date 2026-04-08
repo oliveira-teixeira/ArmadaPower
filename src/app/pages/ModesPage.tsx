@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, type CSSProperties } from 'react';
 import {
-  Home, Moon, Briefcase, Plane, Zap, Plus,
+  Home, Moon, SquareArrowOutUpRight, Zap, Plus,
   Clock, MapPin, CheckCircle, AlertTriangle,
   ChevronDown, ChevronUp, ArrowRight, ArrowLeft,
   Bell, SlidersHorizontal, Thermometer, Droplets,
@@ -25,17 +25,17 @@ interface Routine {
 const MODES: Mode[] = [
   { id: 'home',     icon: Home,      label: 'Home',     description: 'Normal operation with comfort settings' },
   { id: 'sleep',    icon: Moon,      label: 'Sleep',    description: 'Reduced activity, lower temperatures at night' },
-  { id: 'away',     icon: Briefcase, label: 'Away',     description: "Energy-saving mode when you're out" },
-  { id: 'vacation', icon: Plane,     label: 'Vacation', description: 'Minimal energy use for extended absence' },
+  { id: 'away',     icon: SquareArrowOutUpRight, label: 'Away',     description: "Energy-saving mode when you're out" },
+  { id: 'vacation', icon: SquareArrowOutUpRight, label: 'Vacation', description: 'Minimal energy use for extended absence' },
   { id: 'eco',      icon: Zap,       label: 'Eco',      description: 'Prioritize energy savings across all devices' },
 ];
 const ICON_OPTS: { id: string; Icon: LucideComponent }[] = [
   { id: 'home', Icon: Home }, { id: 'sleep', Icon: Moon }, { id: 'morning', Icon: Sun },
-  { id: 'vacation', Icon: Plane }, { id: 'away', Icon: Briefcase },
+  { id: 'vacation', Icon: SquareArrowOutUpRight }, { id: 'away', Icon: SquareArrowOutUpRight },
 ];
 const INITIAL_ROUTINES: Routine[] = [
   { id: 'morning-warmup', name: 'Morning Warmup', triggerIcon: Clock, triggerLabel: '6:00 AM', triggerSub: '(Weekdays)', actionIcon: Sun,      actionLabel: 'Morning Mode', lastRun: 'Today, 6:00 AM', enabled: true },
-  { id: 'leave-home',     name: 'Leave Home',     triggerIcon: MapPin, triggerLabel: 'Everyone', triggerSub: 'leaves',     actionIcon: Briefcase, actionLabel: 'Away Mode',    conflict: 'May conflict with Peak Energy Event', enabled: true },
+  { id: 'leave-home',     name: 'Leave Home',     triggerIcon: MapPin, triggerLabel: 'Everyone', triggerSub: 'leaves',     actionIcon: SquareArrowOutUpRight, actionLabel: 'Away Mode',    conflict: 'May conflict with Peak Energy Event', enabled: true },
   { id: 'nightly-savings',name: 'Nightly Savings',triggerIcon: Clock, triggerLabel: '10:30 PM', triggerSub: '(Daily)',    actionIcon: Moon,      actionLabel: 'Sleep Mode',  enabled: false },
 ];
 

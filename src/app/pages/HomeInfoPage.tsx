@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
-import { ArrowLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Check } from 'lucide-react';
 
 // ── Dropdown option types ─────────────────────────────────────────────────────
 type DropdownKey = 'location' | 'geofence' | 'timezone' | 'tempunit' | null;
@@ -65,20 +65,7 @@ function DropdownMenu({
                   flexShrink: 0,
                 }}
               >
-                <svg
-                  width="12"
-                  height="9"
-                  viewBox="0 0 11.6667 8.33333"
-                  fill="none"
-                >
-                  <path
-                    d="M11.1667 0.5L3.83333 7.83333L0.5 4.5"
-                    stroke="var(--foreground)"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1.5"
-                  />
-                </svg>
+                <Check size={12} style={{ color: 'var(--foreground)' }} strokeWidth={2} />
               </div>
             )}
             <span

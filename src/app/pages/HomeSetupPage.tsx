@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { ArrowLeft, QrCode, Hash, ChevronRight, HelpCircle } from 'lucide-react';
+import { ArrowLeft, QrCode, Hash, ChevronRight, HelpCircle, X } from 'lucide-react';
 
 function OptionCard({
   icon: Icon,
@@ -276,9 +276,7 @@ export default function HomeSetupPage() {
                   onClick={() => setShowEnterCode(false)}
                   style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
-                  <svg width="16" height="16" viewBox="0 0 9 9" fill="none">
-                    <path d="M8.5 0.5L0.5 8.5M0.5 0.5L8.5 8.5" stroke="var(--foreground)" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  <X size={16} style={{ color: 'var(--foreground)' }} strokeWidth={1.8} />
                 </button>
               </div>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'var(--accent)', margin: 0, lineHeight: 1.5 }}>

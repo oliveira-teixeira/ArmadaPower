@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { Bell, ChevronDown, X, Zap, Thermometer, Droplets, Wifi, BarChart2, ChevronRight } from 'lucide-react';
+import { Bell, ChevronDown, X, Zap, Thermometer, Droplets, Wifi, BarChart2, ChevronRight, SquareArrowOutUpRight, Home, AlarmSmoke } from 'lucide-react';
 import { BarChart, Bar, XAxis, ResponsiveContainer, Cell } from 'recharts';
-import svgAwayMode from '../../imports/svg-dg0hnl2eh0';
 
 const weeklyData = [
   { day: 'M', value: 30 },
@@ -151,21 +150,9 @@ export default function Dashboard() {
             }}
           >
             {awayMode ? (
-              /* Palm / away icon from Figma */
-              <svg width="24" height="24" fill="none" viewBox="0 0 21 20">
-                <path
-                  d={svgAwayMode.p3b0e8b80}
-                  stroke="var(--foreground)"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <SquareArrowOutUpRight size={20} style={{ color: 'var(--foreground)' }} strokeWidth={1.7} />
             ) : (
-              /* Home icon */
-              <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-                <path d="M2 7.5L10 2l8 5.5V17a1 1 0 01-1 1H3a1 1 0 01-1-1V7.5z" stroke="var(--accent-foreground)" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M7 18v-6h6v6" stroke="var(--accent-foreground)" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <Home size={20} style={{ color: 'var(--accent-foreground)' }} strokeWidth={1.7} />
             )}
           </div>
 
@@ -330,7 +317,7 @@ export default function Dashboard() {
             className="size-9 rounded-lg flex items-center justify-center flex-none"
             style={{ background: 'var(--accent)', borderRadius: 'var(--radius)' }}
           >
-            <Wifi size={18} style={{ color: 'var(--accent-foreground)' }} strokeWidth={1.8} />
+            <AlarmSmoke size={18} style={{ color: 'var(--accent-foreground)' }} strokeWidth={1.8} />
           </div>
           <span
             className="font-semibold text-base flex-1"

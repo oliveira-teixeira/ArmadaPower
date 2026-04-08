@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import { ArrowLeft, ChevronRight, User, Lock, Bell, Home, Shield, EyeOff, Cpu, Plus } from 'lucide-react';
+import { ArrowLeft, ChevronRight, User, Lock, Bell, Home, Cpu, Plus } from 'lucide-react';
 
 const profileItems = [
   { icon: User,  label: 'Edit Profile',             route: '/settings/edit-profile' },
@@ -9,9 +9,7 @@ const profileItems = [
 
 const accountItems = [
   { icon: Home,   label: 'Home information',  route: '/settings/manage-homes' },
-  { icon: Shield, label: 'Security',          route: null },
-  { icon: EyeOff, label: 'Privacy',           route: '/settings/privacy' },
-  { icon: Cpu,    label: 'Connected Devices', route: null },
+  { icon: Cpu,    label: 'Connected Devices', route: '/devices' },
 ];
 
 const householdMembers = [
@@ -115,8 +113,8 @@ export default function SettingsPage() {
         {/* Profile section */}
         <div>
           <p style={{
-            color: 'var(--primary)', fontFamily: 'var(--font-ui)', fontSize: '12.8px',
-            fontWeight: 600, margin: '0 0 8px 4px',
+            color: 'var(--muted-foreground)', fontFamily: 'var(--font-ui)', fontSize: '12.8px',
+            fontWeight: 600, margin: '0 0 8px 4px', textTransform: 'uppercase' as const, letterSpacing: '0.5px',
           }}>Profile</p>
           <SettingsList>
             {profileItems.map((item, i) => (
@@ -132,8 +130,8 @@ export default function SettingsPage() {
         {/* Household Members */}
         <div>
           <p style={{
-            color: 'var(--primary)', fontFamily: 'var(--font-ui)', fontSize: '12.8px',
-            fontWeight: 600, margin: '0 0 8px 4px',
+            color: 'var(--muted-foreground)', fontFamily: 'var(--font-ui)', fontSize: '12.8px',
+            fontWeight: 600, margin: '0 0 8px 4px', textTransform: 'uppercase' as const, letterSpacing: '0.5px',
           }}>Household Members</p>
           <SettingsList>
             {householdMembers.map((member, i) => (
@@ -148,7 +146,7 @@ export default function SettingsPage() {
                   <p style={{ color: 'var(--surface-foreground)', fontFamily: 'var(--font-body)', fontSize: 16, fontWeight: 600, margin: 0 }}>
                     {member.name}
                   </p>
-                  <p style={{ color: 'var(--primary)', fontFamily: 'var(--font-ui)', fontSize: '12.8px', margin: '2px 0 0' }}>
+                  <p style={{ color: 'var(--muted-foreground)', fontFamily: 'var(--font-ui)', fontSize: '12.8px', margin: '2px 0 0' }}>
                     {member.role}
                   </p>
                 </div>
@@ -174,8 +172,8 @@ export default function SettingsPage() {
         {/* Account Settings */}
         <div>
           <p style={{
-            color: 'var(--primary)', fontFamily: 'var(--font-ui)', fontSize: '12.8px',
-            fontWeight: 600, margin: '0 0 8px 4px',
+            color: 'var(--muted-foreground)', fontFamily: 'var(--font-ui)', fontSize: '12.8px',
+            fontWeight: 600, margin: '0 0 8px 4px', textTransform: 'uppercase' as const, letterSpacing: '0.5px',
           }}>Account Settings</p>
           <SettingsList>
             {accountItems.map((item, i) => (

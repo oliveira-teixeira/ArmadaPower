@@ -1,10 +1,9 @@
 import { useState, useMemo, useCallback } from 'react';
 import { useNavigate } from 'react-router';
-import { ArrowLeft, ChevronDown, TrendingUp, Thermometer, Droplets, Zap } from 'lucide-react';
+import { ArrowLeft, ChevronDown, TrendingUp, ChevronLeft, ChevronRight, Minus } from 'lucide-react';
 import {
   BarChart, Bar, XAxis, YAxis, ReferenceLine, ResponsiveContainer, Cell, LabelList,
 } from 'recharts';
-import svgPaths from '../../imports/svg-0hdfyjh9o7';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Types
@@ -371,15 +370,6 @@ function DrillChart({ data, level, selectedKey, onBarClick }: DrillChartProps) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Insights section (shown on year view)
-// ─────────────────────────────────────────────────────────────────────────────
-const insights = [
-  { Icon: Thermometer, text: 'Heating ran longer than usual today due to lower outdoor temperatures.' },
-  { Icon: Droplets,    text: 'Water heater usage increased this morning.' },
-  { Icon: Zap,         text: 'Energy-saving event reduced consumption by 1.2 kWh this afternoon.' },
-];
-
-// ─────────────────────────────────────────────────────────────────────────────
 // EnergyUsagePage
 // ─────────────────────────────────────────────────────────────────────────────
 export default function EnergyUsagePage() {
@@ -646,13 +636,7 @@ export default function EnergyUsagePage() {
               disabled={!canGoPrev}
               className="size-6 flex items-center justify-center"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d={svgPaths.p54e7200}
-                  fill={canGoPrev ? 'var(--primary)' : '#888888'}
-                  transform="scale(-1,1) translate(-24,0)"
-                />
-              </svg>
+              <ChevronLeft size={24} style={{ color: canGoPrev ? 'var(--primary)' : '#888888' }} strokeWidth={1.8} />
             </button>
             <span
               className="font-semibold"
@@ -665,12 +649,7 @@ export default function EnergyUsagePage() {
               disabled={!canGoNext}
               className="size-6 flex items-center justify-center"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d={svgPaths.p54e7200}
-                  fill={canGoNext ? 'var(--primary)' : '#888888'}
-                />
-              </svg>
+              <ChevronRight size={24} style={{ color: canGoNext ? 'var(--primary)' : '#888888' }} strokeWidth={1.8} />
             </button>
           </div>
 
@@ -740,51 +719,12 @@ export default function EnergyUsagePage() {
               </span>
             </div>
             <div className="flex items-center gap-1.5">
-              <svg width="14" height="14" fill="none" viewBox="0 0 14 14">
-                <path
-                  d={svgPaths.p1c751900}
-                  stroke="var(--accent)"
-                  strokeWidth={1.17}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <Minus size={14} style={{ color: 'var(--accent)' }} strokeWidth={1.5} />
               <span className="text-[13px] font-medium" style={{ color: 'var(--accent)', fontFamily: 'var(--font-ui)' }}>
                 Utility Event
               </span>
             </div>
           </div>
-        </div>
-
-        {/* ── Insights — always visible ── */}
-        <div className="pb-2">
-            <div style={{ borderTop: '1px solid rgba(119,149,207,0.25)', marginBottom: 16 }} />
-            <p className="font-semibold text-xl mb-3" style={{ color: 'var(--foreground)', fontFamily: 'var(--font-body)' }}>
-              Insights
-            </p>
-            <div className="space-y-3">
-              {insights.map((item, i) => (
-                <div
-                  key={i}
-                  className="rounded-xl p-4 flex items-start gap-3"
-                  style={{
-                    background: 'var(--surface)',
-                    border: '1px solid var(--border)',
-                    borderRadius: 'var(--radius-card)',
-                  }}
-                >
-                  <div
-                    className="size-10 rounded-full flex items-center justify-center flex-none"
-                    style={{ background: 'var(--accent)' }}
-                  >
-                    <item.Icon size={18} style={{ color: 'var(--accent-foreground)' }} strokeWidth={1.8} />
-                  </div>
-                  <p className="text-sm flex-1" style={{ color: 'var(--surface-foreground)', fontFamily: 'var(--font-body)' }}>
-                    {item.text}
-                  </p>
-                </div>
-              ))}
-            </div>
         </div>
 
       </div>

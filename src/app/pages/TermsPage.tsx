@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Check } from 'lucide-react';
 
 const SECTIONS = [
   {
@@ -194,9 +194,7 @@ export default function TermsPage() {
             }}
           >
             {accepted && (
-              <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <Check size={10} style={{ color: 'white' }} strokeWidth={2} />
             )}
           </div>
           <div className="flex flex-col gap-1">

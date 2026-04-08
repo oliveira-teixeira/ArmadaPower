@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronRight, Info, AlertTriangle, Zap, MapPin, X } from 'lucide-react';
+import { ChevronDown, ChevronRight, Info, AlertTriangle, Zap, MapPin, X, Droplets, Power, Home, Activity, Calendar, Clock } from 'lucide-react';
 import { BarChart, Bar, XAxis, ResponsiveContainer, Cell } from 'recharts';
 
 const activityData = [
@@ -37,16 +37,8 @@ function EventIcon({ type }: { type: string }) {
       style={{ background: 'var(--panel)', borderColor: 'var(--chart-5)' }}
     >
       {type === 'zap' && <Zap size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
-      {type === 'water' && (
-        <svg width="15" height="15" fill="none" viewBox="0 0 24 24">
-          <path d="M12 2L5.5 9.5C4 11.2 4 14 5.5 15.7 7 17.5 9.3 18 11 18h2c1.7 0 4-.5 5.5-2.3 1.5-1.7 1.5-4.5 0-6.2L12 2z" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      )}
-      {type === 'power' && (
-        <svg width="15" height="15" fill="none" viewBox="0 0 24 24">
-          <path d="M18.36 6.64a9 9 0 11-12.73 0M12 2v10" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      )}
+      {type === 'water' && <Droplets size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
+      {type === 'power' && <Power size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
     </div>
   );
 }
@@ -369,9 +361,7 @@ export default function WaterHeaterPage() {
             }}
           >
             <div className="flex items-center gap-2 mb-4">
-              <svg width="18" height="18" fill="none" viewBox="0 0 20 20">
-                <path d="M10 1L1 7v12h18V7L10 1z" stroke="var(--surface-foreground)" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <Home size={18} style={{ color: 'var(--surface-foreground)' }} strokeWidth={1.7} />
               <span className="font-semibold" style={{ color: 'var(--surface-foreground)', fontFamily: 'var(--font-body)', fontSize: 'var(--text-base)' }}>
                 Mode
               </span>
@@ -426,9 +416,7 @@ export default function WaterHeaterPage() {
             }}
           >
             <div className="flex items-center gap-2 mb-3">
-              <svg width="18" height="18" fill="none" viewBox="0 0 20 20">
-                <path d="M18 12H2M2 12l6-6M2 12l6 6" stroke="var(--surface-foreground)" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <Activity size={18} style={{ color: 'var(--surface-foreground)' }} strokeWidth={1.7} />
               <span className="font-semibold" style={{ color: 'var(--surface-foreground)', fontFamily: 'var(--font-body)', fontSize: 'var(--text-base)' }}>
                 Activity
               </span>
@@ -485,10 +473,7 @@ export default function WaterHeaterPage() {
           >
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <svg width="18" height="18" fill="none" viewBox="0 0 20 20">
-                  <rect x="1" y="3" width="18" height="16" rx="2" stroke="var(--surface-foreground)" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M14 1v4M6 1v4M1 9h18" stroke="var(--surface-foreground)" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <Calendar size={18} style={{ color: 'var(--surface-foreground)' }} strokeWidth={1.7} />
                 <span className="font-semibold" style={{ color: 'var(--surface-foreground)', fontFamily: 'var(--font-body)', fontSize: 'var(--text-base)' }}>
                   Schedule
                 </span>

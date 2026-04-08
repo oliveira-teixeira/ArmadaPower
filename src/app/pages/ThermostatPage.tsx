@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { ChevronDown, Moon, Sun, Zap, MapPin } from 'lucide-react';
-import svgPaths from '../../imports/svg-8nuhll5eg8';
+import { ChevronDown, Moon, Sun, Zap, MapPin, Flame, Minus, Plus, Thermometer, Leaf, Info, Clock, Power } from 'lucide-react';
 
 const historyData = [
   {
@@ -35,19 +34,11 @@ function EventIcon({ type }: { type: string }) {
       style={{ background: 'var(--panel)', borderColor: 'var(--chart-5)' }}
     >
       {type === 'moon' && <Moon size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
-      {type === 'therm' && (
-        <svg width="15" height="15" fill="none" viewBox="0 0 24 24">
-          <path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      )}
+      {type === 'therm' && <Thermometer size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
       {type === 'sun' && <Sun size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
       {type === 'zap' && <Zap size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
       {type === 'pin' && <MapPin size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
-      {type === 'power' && (
-        <svg width="15" height="15" fill="none" viewBox="0 0 24 24">
-          <path d="M18.36 6.64a9 9 0 11-12.73 0M12 2v10" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      )}
+      {type === 'power' && <Power size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
     </div>
   );
 }
@@ -141,15 +132,7 @@ export default function ThermostatPage() {
                 className="size-6 flex items-center justify-center flex-none rounded"
                 style={{ background: 'var(--warning-light)' }}
               >
-                <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-                  <path
-                    d={svgPaths.p9e35d40}
-                    stroke="var(--accent-foreground)"
-                    strokeWidth="1.67"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <Moon size={20} style={{ color: 'var(--accent-foreground)' }} strokeWidth={1.67} />
               </div>
               <div>
                 <p
@@ -174,15 +157,7 @@ export default function ThermostatPage() {
             <div className="flex flex-col items-center" style={{ paddingRight: '64px' }}>
               {/* Heating label */}
               <div className="flex items-center gap-1.5 mb-2">
-                <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                  <path
-                    d={svgPaths.p7c6fc00}
-                    stroke="var(--foreground)"
-                    strokeWidth="1.33"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <Flame size={16} style={{ color: 'var(--foreground)' }} strokeWidth={1.33} />
                 <span
                   className="font-semibold"
                   style={{ color: 'var(--foreground)', fontFamily: 'var(--font-body)', fontSize: '16px' }}
@@ -253,15 +228,7 @@ export default function ThermostatPage() {
                     boxShadow: '0px 2px 4px 0px rgba(0,0,0,0.05)',
                   }}
                 >
-                  <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-                    <path
-                      d="M4.16667 10H15.8333"
-                      stroke="var(--accent-foreground)"
-                      strokeWidth="1.67"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <Minus size={20} style={{ color: 'var(--accent-foreground)', transform: 'rotate(90deg)' }} strokeWidth={1.67} />
                 </button>
 
                 {/* Target temp — counter-rotated so text reads normally */}
@@ -294,15 +261,7 @@ export default function ThermostatPage() {
                     boxShadow: '0px 2px 4px 0px rgba(0,0,0,0.05)',
                   }}
                 >
-                  <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-                    <path
-                      d={svgPaths.p1c75eb80}
-                      stroke="var(--accent-foreground)"
-                      strokeWidth="1.67"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <Plus size={20} style={{ color: 'var(--accent-foreground)', transform: 'rotate(90deg)' }} strokeWidth={1.67} />
                 </button>
               </div>
             </div>
@@ -385,15 +344,7 @@ export default function ThermostatPage() {
                 className="size-9 rounded-full flex items-center justify-center flex-none"
                 style={{ background: 'var(--accent)' }}
               >
-                <svg width="18" height="18" fill="none" viewBox="0 0 18 18">
-                  <path
-                    d={svgPaths.p20a7a700}
-                    stroke="var(--accent-foreground)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <Thermometer size={18} style={{ color: 'var(--accent-foreground)' }} strokeWidth={1.5} />
               </div>
               <div>
                 <p
@@ -424,24 +375,7 @@ export default function ThermostatPage() {
                 className="size-9 rounded-full flex items-center justify-center flex-none"
                 style={{ background: 'var(--accent)' }}
               >
-                <svg width="18" height="18" fill="none" viewBox="0 0 18 18" className="overflow-clip">
-                  <g>
-                    <path
-                      d={svgPaths.p1c228800}
-                      stroke="var(--accent-foreground)"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d={svgPaths.p24ae7900}
-                      stroke="var(--accent-foreground)"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </g>
-                </svg>
+                <Leaf size={18} style={{ color: 'var(--accent-foreground)' }} strokeWidth={1.5} />
               </div>
               <div>
                 <p
@@ -472,22 +406,7 @@ export default function ThermostatPage() {
               >
                 <div className="flex items-center gap-2">
                   {/* Info icon (Device Info) */}
-                  <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-                    <path
-                      d={svgPaths.p10539cc0}
-                      stroke="var(--surface-foreground)"
-                      strokeWidth="1.67"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d={svgPaths.p3274e300}
-                      stroke="var(--surface-foreground)"
-                      strokeWidth="1.67"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <Info size={20} style={{ color: 'var(--surface-foreground)' }} strokeWidth={1.67} />
                   <span
                     className="font-semibold text-[16px]"
                     style={{ color: 'var(--surface-foreground)', fontFamily: 'var(--font-body)' }}
@@ -568,10 +487,7 @@ export default function ThermostatPage() {
                         {event.title}
                       </p>
                       <div className="flex items-center gap-1.5 mt-0.5">
-                        <svg width="13" height="13" fill="none" viewBox="0 0 24 24" className="opacity-60">
-                          <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="var(--accent)" strokeWidth="2" />
-                          <path d="M12 6v6l4 2" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
+                        <Clock size={13} className="opacity-60" style={{ color: 'var(--accent)' }} strokeWidth={1.8} />
                         <span
                           className="text-xs opacity-70"
                           style={{ color: 'var(--accent)', fontFamily: 'var(--font-body)' }}

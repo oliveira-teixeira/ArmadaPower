@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
-import { X } from 'lucide-react';
+import { X, Check } from 'lucide-react';
 // Figma asset placeholder - original: figma:asset/326694bda69a77c8dc191179450e5b7ab0fa1545.png
 const imgQrScene = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect fill="%23111" width="400" height="400"/></svg>';
 
@@ -270,10 +270,9 @@ export default function QRScanPage() {
                 gap: 8,
               }}
             >
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="22" fill="rgba(47,201,85,0.2)" stroke="var(--success)" strokeWidth="2"/>
-                <path d="M14 24L21 31L34 17" stroke="var(--success)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(47,201,85,0.2)', border: '2px solid var(--success)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Check size={24} style={{ color: 'var(--success)' }} strokeWidth={2.5} />
+              </div>
               <span style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, color: 'var(--success)' }}>
                 QR Code Detected!
               </span>
@@ -366,9 +365,7 @@ export default function QRScanPage() {
                   onClick={() => setShowEnterCode(false)}
                   style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
-                  <svg width="16" height="16" viewBox="0 0 9 9" fill="none">
-                    <path d="M8.5 0.5L0.5 8.5M0.5 0.5L8.5 8.5" stroke="var(--foreground)" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  <X size={16} style={{ color: 'var(--foreground)' }} strokeWidth={1.8} />
                 </button>
               </div>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'var(--accent)', margin: 0, lineHeight: 1.5 }}>

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import { ArrowLeft, Thermometer, Droplets, Check, AlertTriangle, X } from 'lucide-react';
+import { ArrowLeft, Thermometer, Droplets, Check, AlertTriangle, X, AlarmSmoke } from 'lucide-react';
 
 const devices = [
   {
@@ -25,10 +25,7 @@ const devices = [
     status: 'online',
     path: null,
     icon: ({ size, stroke, strokeWidth }: { size: number; stroke: string; strokeWidth: number }) => (
-      <svg width={size} height={size} fill="none" viewBox="0 0 22 20">
-        <path d="M11 1L1 19h20L11 1z" stroke={stroke} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M11 8v4M11 15h.01" stroke={stroke} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
+      <AlarmSmoke size={size} color={stroke} strokeWidth={strokeWidth} />
     ),
   },
 ];

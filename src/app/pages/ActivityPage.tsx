@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { ArrowLeft, ChevronDown, MapPin, Zap, Moon, Sun, CheckCircle } from 'lucide-react';
+import { ArrowLeft, ChevronDown, MapPin, Zap, Moon, Sun, CheckCircle, Thermometer, Power, WifiOff, Clock } from 'lucide-react';
 
 const historyData = [
   {
@@ -33,19 +33,11 @@ function EventIcon({ type }: { type: string }) {
       style={{ background: 'var(--panel)', borderColor: 'var(--chart-5)' }}
     >
       {type === 'moon' && <Moon size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
-      {type === 'therm' && (
-        <svg width="15" height="15" fill="none" viewBox="0 0 24 24">
-          <path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      )}
+      {type === 'therm' && <Thermometer size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
       {type === 'sun' && <Sun size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
       {type === 'zap' && <Zap size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
       {type === 'pin' && <MapPin size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
-      {type === 'power' && (
-        <svg width="15" height="15" fill="none" viewBox="0 0 24 24">
-          <path d="M18.36 6.64a9 9 0 11-12.73 0M12 2v10" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      )}
+      {type === 'power' && <Power size={15} style={{ color: 'var(--accent)' }} strokeWidth={1.8} />}
     </div>
   );
 }
@@ -143,10 +135,7 @@ export default function ActivityPage() {
                 <div className="p-4">
                   <div className="flex gap-3">
                     <div className="size-10 rounded-full flex items-center justify-center flex-none" style={{ background: '#fef2f2' }}>
-                      <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-                        <path d="M1 6s4-4 11-4 11 4 11 4" stroke="var(--danger)" strokeWidth="2" strokeLinecap="round" />
-                        <path d="M1 6l1.5 1.5M23 6l-1.5 1.5M1 6l11 11L23 6" stroke="var(--danger)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
+                      <WifiOff size={18} style={{ color: 'var(--danger)' }} strokeWidth={1.8} />
                     </div>
                     <div className="flex-1">
                       <p className="font-semibold text-base" style={{ color: 'var(--surface-foreground)', fontFamily: 'var(--font-body)' }}>
@@ -346,10 +335,7 @@ export default function ActivityPage() {
                         {event.title}
                       </p>
                       <div className="flex items-center gap-1.5 mt-0.5">
-                        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" className="opacity-60">
-                          <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="var(--accent)" strokeWidth="2" />
-                          <path d="M12 6v6l4 2" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
+                        <Clock size={12} className="opacity-60" style={{ color: 'var(--accent)' }} strokeWidth={1.8} />
                         <span
                           className="text-xs opacity-80"
                           style={{ color: 'var(--accent)', fontFamily: 'var(--font-body)' }}
