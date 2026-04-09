@@ -34,7 +34,7 @@ export default function Dashboard() {
           <ChevronDown size={16} style={{ color: 'var(--foreground)' }} />
         </button>
         <div className="flex items-center gap-4">
-          <button onClick={() => navigate('/activity')}>
+          <button onClick={() => navigate('/dashboard/activity')}>
             <Bell size={22} style={{ color: 'var(--foreground)' }} strokeWidth={1.8} />
           </button>
           <button
@@ -190,7 +190,7 @@ export default function Dashboard() {
 
         {/* ── Thermostat Card ── */}
         <button
-          onClick={() => navigate('/devices/thermostat')}
+          onClick={() => navigate('/dashboard/devices/thermostat')}
           className="w-full rounded-xl p-5 text-left"
           style={{
             background: 'var(--surface)',
@@ -253,7 +253,7 @@ export default function Dashboard() {
 
         {/* ── Water Heater Card ── */}
         <button
-          onClick={() => navigate('/devices/water-heater')}
+          onClick={() => navigate('/dashboard/devices/water-heater')}
           className="w-full rounded-xl p-5 text-left"
           style={{
             background: 'var(--surface)',
@@ -339,7 +339,7 @@ export default function Dashboard() {
 
         {/* ── Energy Usage Card ── */}
         <button
-          onClick={() => navigate('/energy')}
+          onClick={() => navigate('/dashboard/energy')}
           className="w-full p-5 text-left"
           style={{
             background: 'var(--surface)',

@@ -2,10 +2,10 @@ import { useNavigate, useLocation } from 'react-router';
 import { Home, LayoutGrid, SlidersHorizontal, Settings } from 'lucide-react';
 
 const navItems = [
-  { label: 'Home', icon: Home, path: '/' },
-  { label: 'Devices', icon: LayoutGrid, path: '/devices' },
-  { label: 'Modes', icon: SlidersHorizontal, path: '/modes' },
-  { label: 'Settings', icon: Settings, path: '/settings' },
+  { label: 'Home', icon: Home, path: '/dashboard' },
+  { label: 'Devices', icon: LayoutGrid, path: '/dashboard/devices' },
+  { label: 'Modes', icon: SlidersHorizontal, path: '/dashboard/modes' },
+  { label: 'Settings', icon: Settings, path: '/dashboard/settings' },
 ];
 
 export function BottomNav() {
@@ -13,7 +13,7 @@ export function BottomNav() {
   const location = useLocation();
 
   const isActive = (path: string) => {
-    if (path === '/') return location.pathname === '/';
+    if (path === '/dashboard') return location.pathname === '/dashboard';
     return location.pathname.startsWith(path);
   };
 

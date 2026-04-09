@@ -2,14 +2,14 @@ import { useNavigate } from 'react-router';
 import { ArrowLeft, ChevronRight, User, Lock, Bell, Home, Cpu, Plus } from 'lucide-react';
 
 const profileItems = [
-  { icon: User,  label: 'Edit Profile',             route: '/settings/edit-profile' },
-  { icon: Lock,  label: 'Change Password',           route: '/settings/change-password' },
-  { icon: Bell,  label: 'Notification Preferences',  route: '/settings/notifications' },
+  { icon: User,  label: 'Edit Profile',             route: '/dashboard/settings/edit-profile' },
+  { icon: Lock,  label: 'Change Password',           route: '/dashboard/settings/change-password' },
+  { icon: Bell,  label: 'Notification Preferences',  route: '/dashboard/settings/notifications' },
 ];
 
 const accountItems = [
-  { icon: Home,   label: 'Home information',  route: '/settings/manage-homes' },
-  { icon: Cpu,    label: 'Connected Devices', route: '/devices' },
+  { icon: Home,   label: 'Home information',  route: '/dashboard/settings/manage-homes' },
+  { icon: Cpu,    label: 'Connected Devices', route: '/dashboard/devices' },
 ];
 
 const householdMembers = [
@@ -67,7 +67,7 @@ export default function SettingsPage() {
         padding: '16px 24px', display: 'flex', alignItems: 'center', gap: 8,
         position: 'sticky', top: 0, zIndex: 10,
       }}>
-        <button onClick={() => navigate('/')} style={{ color: 'var(--foreground)', background: 'none', border: 'none', cursor: 'pointer', flexShrink: 0 }}>
+        <button onClick={() => navigate('/dashboard')} style={{ color: 'var(--foreground)', background: 'none', border: 'none', cursor: 'pointer', flexShrink: 0 }}>
           <ArrowLeft size={22} strokeWidth={2} />
         </button>
         <p style={{
@@ -154,7 +154,7 @@ export default function SettingsPage() {
               </button>
             ))}
             <button
-              onClick={() => navigate('/settings/add-member')}
+              onClick={() => navigate('/dashboard/settings/add-member')}
               style={{
                 display: 'flex', alignItems: 'center', gap: 12,
                 padding: '16px 20px', width: '100%', textAlign: 'left',

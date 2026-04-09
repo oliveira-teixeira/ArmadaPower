@@ -46,7 +46,7 @@ export default function LoginPage() {
         }}
       >
         <button
-          onClick={() => navigate('/welcome')}
+          onClick={() => navigate('/')}
           className="flex items-center justify-center"
           style={{ width: 24, height: 24, background: 'transparent', border: 'none', cursor: 'pointer', padding: 0 }}
         >
@@ -163,7 +163,7 @@ export default function LoginPage() {
         }}
       >
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/dashboard')}
           style={{
             width: '100%',
             padding: '10px 12px',

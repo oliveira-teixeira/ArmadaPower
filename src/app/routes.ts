@@ -16,8 +16,6 @@ import PrivacyPage from './pages/PrivacyPage';
 import ManageHomesPage from './pages/ManageHomesPage';
 import AddMemberPage from './pages/AddMemberPage';
 import HomeInfoPage from './pages/HomeInfoPage';
-import AddHomePage from './pages/AddHomePage';
-
 // Onboarding pages
 import WelcomePage from './pages/WelcomePage';
 import LoginPage from './pages/LoginPage';
@@ -33,7 +31,7 @@ export const router = createBrowserRouter([
   {
     Component: OnboardingLayout,
     children: [
-      { path: 'welcome',              Component: WelcomePage },
+      { path: '/',                    Component: WelcomePage },
       { path: 'login',                Component: LoginPage },
       { path: 'signup',               Component: SignupPage },
       { path: 'signup/details',       Component: AccountDetailsPage },
@@ -46,11 +44,10 @@ export const router = createBrowserRouter([
 
   // ── Main app (with bottom nav) ────────────────────────────────────────────────
   {
-    path: '/',
+    path: '/dashboard',
     Component: Layout,
     children: [
       { index: true,                              Component: Dashboard },
-      { path: 'dashboard',                        Component: Dashboard },
       { path: 'devices',                          Component: DevicesPage },
       { path: 'devices/thermostat',               Component: ThermostatPage },
       { path: 'devices/water-heater',             Component: WaterHeaterPage },
@@ -63,7 +60,7 @@ export const router = createBrowserRouter([
       { path: 'settings/privacy',                 Component: PrivacyPage },
       { path: 'settings/manage-homes',            Component: ManageHomesPage },
       { path: 'settings/manage-homes/:homeId',    Component: HomeInfoPage },
-      { path: 'settings/add-home',                Component: AddHomePage },
+      { path: 'settings/add-home',                Component: HomeSetupPage },
       { path: 'settings/add-member',              Component: AddMemberPage },
       { path: 'energy',                           Component: EnergyUsagePage },
     ],

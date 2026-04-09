@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useLocation } from 'react-router';
 import { ArrowLeft, QrCode, Hash, ChevronRight, HelpCircle, X } from 'lucide-react';
 
 function OptionCard({
@@ -78,6 +78,8 @@ function OptionCard({
 
 export default function HomeSetupPage() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const fromSettings = location.pathname.includes('/dashboard/');
   const [showEnterCode, setShowEnterCode] = useState(false);
   const [code, setCode] = useState('');
 
@@ -97,7 +99,7 @@ export default function HomeSetupPage() {
         }}
       >
         <button
-          onClick={() => navigate('/signup/terms')}
+          onClick={() => navigate(fromSettings ? '/dashboard/settings/manage-homes' : '/signup/terms')}
           style={{ width: 24, height: 24, background: 'transparent', border: 'none', cursor: 'pointer', padding: 0 }}
         >
           <ArrowLeft size={20} color="var(--foreground)" />
@@ -331,7 +333,7 @@ export default function HomeSetupPage() {
                 Cancel
               </button>
               <button
-                onClick={() => { setShowEnterCode(false); navigate('/onboarding/connected'); }}
+                onClick={() => { setShowEnterCode(false); navigate(fromSettings ? '/dashboard/settings/manage-homes' : '/onboarding/connected'); }}
                 style={{
                   height: 36,
                   padding: '0 16px',

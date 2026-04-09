@@ -248,7 +248,7 @@ export default function HomeConnectedPage() {
         }}
       >
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/dashboard')}
           style={{
             width: '100%',
             maxWidth: 311,

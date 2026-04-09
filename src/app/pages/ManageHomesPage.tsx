@@ -45,7 +45,7 @@ export default function ManageHomesPage() {
         }}>
           {homes.map((home, i) => (
             <button key={home.id}
-              onClick={() => navigate(`/settings/manage-homes/${home.id}`)}
+              onClick={() => navigate(`/dashboard/settings/manage-homes/${home.id}`)}
               style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                 padding: '16px', width: '100%', textAlign: 'left',
@@ -68,7 +68,7 @@ export default function ManageHomesPage() {
 
           {/* Add new home */}
           <button
-            onClick={() => navigate('/settings/add-home')}
+            onClick={() => navigate('/dashboard/settings/add-home')}
             style={{
               display: 'flex', alignItems: 'center', gap: 12, padding: '16px',
               width: '100%', textAlign: 'left', background: 'transparent',
